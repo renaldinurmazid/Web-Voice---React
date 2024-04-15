@@ -45,9 +45,12 @@ const App = () => {
 
   useEffect(() => {
     if (playing) {
+      playAudio('audio/antrian.wav');
       if (number !== '') {
-        panggil_nomor(parseInt(number));
-        setPlaying(false);
+        setTimeout(() => {
+          panggil_nomor(parseInt(number));
+          setPlaying(false);
+        },2000)
       }
     }
   }, [playing, number]);
